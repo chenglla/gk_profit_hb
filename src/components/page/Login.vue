@@ -53,7 +53,8 @@
                             if (res.data.code === 0) {
                                 console.log(res.data)
                                 this.$store.commit('SET_LEVEL', res.data.data.level)
-                                this.$store.commit('SET_GROUPID', res.data.data.groupId)
+                                // this.$store.commit('SET_GROUPID', res.data.data.groupId)
+                                localStorage.setItem('groupId', res.data.data.groupId)
                                 this.$message({
                                     message: '恭喜你，登录成功',
                                     type: 'success'

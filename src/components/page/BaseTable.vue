@@ -175,7 +175,12 @@
         computed: {
             groupId () {
                 console.log('groupId:', this.$store.state.user.groupId)
-                return this.$route.query.groupId
+                // return this.$route.query.groupId
+                return localStorage.groupId
+                // return this.$store.state.user.groupId
+                // if (this.$store.state.user.groupId === '') {
+                //     return this.$route.query.groupId
+                // }
                 // return this.$store.state.user.groupId
             },
         },
