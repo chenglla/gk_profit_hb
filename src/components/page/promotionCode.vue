@@ -45,10 +45,16 @@
         },
         computed: {
             groupId () {
-                console.log('groupId:', this.$store.state.user.groupId)
+                console.log('groupId:', localStorage.groupId, 'hahahah')
                 return localStorage.groupId
                 // return this.$store.state.user.groupId
             },
+        },
+        mounted () {
+            if (this.groupId === undefined) {
+                location.href = 'http://www.kgai.tech/cee_pc/#/login'
+                // return
+            }
         },
         methods: {
             downLoadCode () {

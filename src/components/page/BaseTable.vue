@@ -174,8 +174,11 @@
         },
         computed: {
             groupId () {
-                console.log('groupId:', this.$store.state.user.groupId)
+                console.log('groupId:', localStorage.groupId, 'hahahah')
                 // return this.$route.query.groupId
+                // if (localStorage.groupId === undefined) {
+                //     return this.$route.query.groupId
+                // }
                 return localStorage.groupId
                 // return this.$store.state.user.groupId
                 // if (this.$store.state.user.groupId === '') {
@@ -185,7 +188,11 @@
             },
         },
         mounted () {
-            if (this.groupid === '') {
+            if (this.groupId === undefined) {
+                location.href = 'http://www.kgai.tech/cee_pc/#/login'
+                return
+            }
+            if (this.groupId === '') {
                 this.getOneScoreProvince()
                 this.getAllAgent()
             } else {
